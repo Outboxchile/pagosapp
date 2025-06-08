@@ -25,4 +25,3 @@ class Comision(db.Model):
     monto = db.Column(db.Float, nullable=False)
     pago = db.relationship("Pago", back_populates="comisiones")
     persona = db.relationship("Persona")
-
