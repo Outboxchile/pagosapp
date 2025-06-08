@@ -17,10 +17,6 @@ def realizados():
     pagos = Pago.query.filter(Pago.fecha_pagado.isnot(None)).all()
     return render_template("realizados.html", pagos=pagos)
 
-@app.route("/")
-def pendientes():
-    return "✅ ¡Funciona la ruta raíz!"
-
 @app.route("/pagar/<int:id>")
 def pagar(id):
     pago = Pago.query.get_or_404(id)
