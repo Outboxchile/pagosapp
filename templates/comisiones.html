@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Comisiones</title>
+</head>
+<body>
+    <h1>Comisiones por persona</h1>
+    <ul>
+    {% for nombre, total in resumen %}
+        <li>{{ nombre }} - {{ total }}</li>
+    {% else %}
+        <li>No hay comisiones.</li>
+    {% endfor %}
+    </ul>
+    <a href="{{ url_for('pendientes') }}">Volver a pendientes</a>
+</body>
+</html>

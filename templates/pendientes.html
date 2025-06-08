@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Pagos pendientes</title>
+</head>
+<body>
+    <h1>Pagos pendientes</h1>
+    <ul>
+    {% for pago in pagos %}
+        <li>{{ pago.cliente }} - {{ pago.monto }} - <a href="{{ url_for('pagar', id=pago.id) }}">Marcar pagado</a></li>
+    {% else %}
+        <li>No hay pagos pendientes.</li>
+    {% endfor %}
+    </ul>
+    <a href="{{ url_for('realizados') }}">Ver realizados</a>
+</body>
+</html>
